@@ -3,11 +3,134 @@
         <title>Faaiz Puthawala Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <style>
-            *{
-                box-sizing: border-box;
-            }
+            .spinner-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ff6347;
+z-index: 999999;
+}
+            .spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+
+  position: absolute;
+top: 48%;
+left: 48%;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.loader{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  transition: all 0.5s;
+  z-index: 9999;
+}
+.loader .ring{
+  height: 45px;
+  width: 45px;
+  border: 5px solid #ddd;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader .ring:after{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 5px solid #ff3d00;
+  border-top-color: transparent;
+  animation: rotate 1.5s linear infinite;
+}
+@keyframes rotate {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.content .image{
+  background: url("bg.png") no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.content .text{
+  padding: 20px 50px;
+}
+.content .text .title{
+  padding: 10px 0 0 0;
+  font-size: 35px;
+  font-weight: 700;
+}
+.content .text p{
+  padding: 10px 0;
+  text-align: justify;
+}*/
+
+
+
+            
             .container{
                 display:flex ;
                 flex-direction: row;
@@ -64,6 +187,14 @@
         </style>
     </head>
     <body margin=0>
+        <div class="spinner-wrapper">
+            <div class="spinner"></div>
+            </div>
+            
+        <!--<div class="loader">
+            <div class="ring">
+        </div>
+      </div>-->
         <div class="container" style="justify-content: center;align-items: center;min-height: 100vh;">
             <div class="name">
                 <div style="padding-bottom: 7px;font-family:'Roboto',sans-serif;color:#646464;font-weight: 500;">Hey there I'm</div>
@@ -73,7 +204,31 @@
             </div>
         </div>
         <div class="container">
-            <div class="photo" ><img  src="https://faaizputhawala.files.wordpress.com/2020/07/download.png?w=370&h=" width="104%"></div>
+                <div class="photo" ><img  src="https://faaizputhawala.files.wordpress.com/2020/07/download.png?w=370&h=" width="104%"></div>
         </div>
-    </body>
+
+        
+        <!--<script>
+            const loader = document.querySelector(".spinner-wrapper");
+            window.onload = function(){
+              setTimeout(function(){
+                loader.style.opacity = "0";
+                setTimeout(function(){
+                  loader.style.display = "inline";
+                }, 500);
+              },1500);
+            }
+            </script>-->
+            <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script    type="text/javascript">
+$(window).load(function() { // makes sure the whole site is loaded
+$('.spinner').fadeOut(); // will first fade out the loading animation
+$('.spinner-wrapper').delay(50).fadeOut(100); // will fade out the white DIV that covers the website.
+$('body').delay(50).css({'overflow':'visible'});
+})
+</script>
+            
+
+
+   </body>
 </html>
